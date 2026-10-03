@@ -5,7 +5,7 @@
 
 ## 🚀 Live Demo
 
-**[Open MathMate Live App](https://mathmate-jjn65btmfvy9vwfgqohvuh.streamlit.app/)**
+**[Open MathMate Live App](https://ectocranial-unhandily-delila.ngrok-free.dev/)**
 
 
 > Streamlit URL before submission.
