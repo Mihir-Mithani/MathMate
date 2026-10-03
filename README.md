@@ -5,9 +5,9 @@
 
 ## 🚀 Live Demo
 
-**[Open MathMate Live App](YOUR_STREAMLIT_DEPLOY_LINK_HERE)**
+**[Open MathMate Live App](https://mathmate-jjn65btmfvy9vwfgqohvuh.streamlit.app/)**
 
-> Replace `YOUR_STREAMLIT_DEPLOY_LINK_HERE` with your actual deployed
+
 > Streamlit URL before submission.
 
 **GitHub Repository:** https://github.com/Mihir-Mithani/MathMate
