@@ -32,6 +32,7 @@ REFUSALS = {
     "empty": "I can't help with an empty problem. Please provide a math word problem.",
     "off_topic": "This doesn't look like a math word problem. Please provide a problem with numbers and a question.",
     "prompt_injection": "I can't process that request. Please provide a genuine math word problem.",
+    "unverifiable": "I couldn't verify the solution consistently. Please try rephrasing the problem or try a different one.",
 }
 
 # Safe fallback hints

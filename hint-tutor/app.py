@@ -163,12 +163,12 @@ with st.sidebar:
     # Model selector
     model_option = st.selectbox(
         "Model",
-        ["MODEL_MAIN (nemotron-3-super)", "MODEL_FAST (nemotron-3-super)"],
+        ["MODEL_MAIN (nemotron-3-ultra-550b)", "MODEL_FAST (nemotron-3-ultra-550b)"],
         index=0,
-        help="MODEL_MAIN and MODEL_FAST both use nemotron-3-super-120b-a12b via NVIDIA NIM"
+        help="MODEL_MAIN and MODEL_FAST both use nemotron-3-ultra-550b-a55b via NVIDIA NIM"
     )
     model_key = "MODEL_MAIN" if "MAIN" in model_option else "MODEL_FAST"
-    model_name = os.getenv(model_key, "nvidia/nemotron-3-super-120b-a12b")
+    model_name = os.getenv(model_key, "nvidia/nemotron-3-ultra-550b-a55b")
 
     # Debug toggle
     show_debug = st.checkbox("Show Debug Info", value=False)

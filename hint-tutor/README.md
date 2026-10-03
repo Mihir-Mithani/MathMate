@@ -14,20 +14,16 @@ cp .env.example .env
 streamlit run app.py
 ```
 
-## Deploy to Streamlit Community Cloud
+## Run via ngrok (for live demo from laptop)
 
-1. **Push this folder (`hint-tutor/`) to a GitHub repo**
-2. Go to https://share.streamlit.io → **New app**
-3. Select your repo, branch `main`, main file: `hint-tutor/app.py`
-4. Click **Advanced settings** → **Secrets** and add:
-   ```toml
-   NVIDIA_API_KEY = "nvapi-xxxxxxxxxxxx"
-   MODEL_MAIN = "nvidia/nemotron-3-super-120b-a12b"
-   MODEL_FAST = "nvidia/nemotron-3-super-120b-a12b"
-   ```
-5. **Deploy** — Streamlit installs from `requirements.txt` and launches.
+```bash
+# Terminal 1: Start Streamlit
+streamlit run app.py --server.port 8501 --server.headless true
 
-> **Note**: The `.env` file is in `.gitignore` and should NOT be committed. Use Streamlit Secrets for API keys.
+# Terminal 2: Start ngrok tunnel
+ngrok http 8501
+# Share the https://... URL with judges
+```
 
 ## App Features
 
@@ -46,7 +42,6 @@ streamlit run app.py
 ```
 hint-tutor/
 ├── app.py                      # Streamlit app (Tutor tab + history sidebar)
-├── .streamlit/config.toml      # Streamlit theme/server config
 ├── llm.py                      # NVIDIA NIM wrapper (retry, timeout, JSON validation)
 ├── schemas.py                  # Pydantic models
 ├── pipeline_v1.py              # Naive baseline (for eval only)

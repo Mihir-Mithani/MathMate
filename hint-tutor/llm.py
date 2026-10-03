@@ -44,7 +44,7 @@ def _get_client() -> OpenAI:
 def _get_model(model: Optional[str] = None) -> str:
     if model:
         return model
-    return os.getenv("MODEL_MAIN", "nvidia/nemotron-3-super-120b-a12b")
+    return os.getenv("MODEL_MAIN", "nvidia/nemotron-3-ultra-550b-a55b")
 
 
 def call_llm(

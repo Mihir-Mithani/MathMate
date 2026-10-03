@@ -71,7 +71,7 @@ def start_problem(text: str, model: Optional[str] = None) -> Dict[str, Any]:
         }
 
     # 2. P0 classifier (LLM)
-    system_p0 = load_prompt("prompts/v2/p0_input_gate.md")
+    system_p0 = load_prompt("v2/p0_input_gate.md")
     user_p0 = f"Problem: {text}\n\nClassify this input."
     start = time.time()
     try:
@@ -90,7 +90,7 @@ def start_problem(text: str, model: Optional[str] = None) -> Dict[str, Any]:
         }
 
     # 3. P1 solver twice (temperature 0 and 0.7)
-    system_p1 = load_prompt("prompts/v2/p1_solver.md")
+    system_p1 = load_prompt("v2/p1_solver.md")
     user_p1 = f"Problem: {text}\n\nProvide a complete step-by-step solution."
 
     solutions = []
@@ -141,8 +141,8 @@ def get_hint(
         raise ValueError("Level must be 1, 2, or 3")
 
     previous_hints = previous_hints or []
-    system_p2 = load_prompt("prompts/v2/p2_hint_generator.md")
-    system_p3 = load_prompt("prompts/v2/p3_leak_judge.md")
+    system_p2 = load_prompt("v2/p2_hint_generator.md")
+    system_p3 = load_prompt("v2/p3_leak_judge.md")
 
     # Build solution text for prompt
     solution_text = ""
@@ -278,7 +278,7 @@ def analyze_working(
     model: Optional[str] = None,
 ) -> WorkingAnalysis:
     """Analyze student working for errors (stretch)."""
-    system_p4 = load_prompt("prompts/v2/p4_working_analyzer.md")
+    system_p4 = load_prompt("v2/p4_working_analyzer.md")
 
     solution_text = ""
     for i, step in enumerate(solution.steps):
@@ -317,7 +317,7 @@ def generate_targeted_hint(
     model: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Generate targeted hint based on working analysis (stretch)."""
-    system_p5 = load_prompt("prompts/v2/p5_targeted_hint.md")
+    system_p5 = load_prompt("v2/p5_targeted_hint.md")
 
     solution_text = ""
     for i, step in enumerate(solution.steps):

@@ -61,12 +61,16 @@ Timestamped log of all prompt changes. Format: `prompt(<card>): <what changed> |
 
 ---
 
-## 2024-10-03 13:30 - Deploy Configuration
+## 2024-10-03 13:30 - History Sidebar
 
-### code(.streamlit/config.toml): Theme, server, browser settings for Streamlit Cloud | why: production deploy config | v2.5
-### code(.streamlit/secrets.toml.example): Template for Streamlit Secrets (NVIDIA_API_KEY, MODEL_MAIN, MODEL_FAST) | why: secure deploy without .env | v2.5
-### code(.gitignore): Added .streamlit/secrets.toml | why: prevent committing secrets | v2.5
-### doc(README): Deploy instructions, project structure, eval metrics | why: documentation for hackathon | v2.5
+### code(app): Added history panel in sidebar with timestamped problem/hint log, load previous problem | why: session history for demo | v2.5
+
+---
+
+## 2024-10-03 14:00 - ngrok Local Demo
+
+### doc(README): Added ngrok run instructions; removed Streamlit Cloud deploy section | why: demo from laptop via ngrok | v2.5
+### code(.gitignore): Removed .streamlit/secrets.toml (no longer needed) | why: ngrok uses local .env | v2.5
 
 ---
 
