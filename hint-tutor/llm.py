@@ -8,7 +8,9 @@ from openai import OpenAI, APIError, APITimeoutError, RateLimitError
 from pydantic import BaseModel, ValidationError
 from dotenv import load_dotenv
 
-load_dotenv()
+# Load .env from the package directory (where this file lives)
+_here = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(os.path.join(_here, ".env"))
 
 T = TypeVar('T', bound=BaseModel)
 

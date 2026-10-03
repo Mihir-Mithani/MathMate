@@ -5,40 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dbe2977-babb-4d55-bd27-7b8fbd4d49ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/MathMate.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/PROMPT_HISTORY.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/arithmetic_check.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/eval/guardrail_cases.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/eval/problems.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/eval/run_eval.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/eval/wrong_working.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/guardrails.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/llm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/pipeline_v1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/pipeline_v2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v1/hint_naive.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v1/solver.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v2/p0_input_gate.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v2/p1_solver.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v2/p2_hint_generator.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v2/p3_leak_judge.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v2/p4_working_analyzer.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v2/p5_targeted_hint.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/schemas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hint-tutor/tests/test_guardrails.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Problem13_Prompt_Playbook.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hint-tutor/PROMPT_HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/hint-tutor/PROMPT_HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hint-tutor/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/hint-tutor/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hint-tutor/eval/run_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/hint-tutor/eval/run_eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hint-tutor/llm.py" beforeDir="false" afterPath="$PROJECT_DIR$/hint-tutor/llm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hint-tutor/pipeline_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/hint-tutor/pipeline_v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hint-tutor/tests/test_guardrails.py" beforeDir="false" afterPath="$PROJECT_DIR$/hint-tutor/tests/test_guardrails.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,61 +42,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.3099269249847465" />
-      <entry key="MS500" value="1.7913312460904627" />
-      <entry key="S2" value="2.3594225329209078" />
-      <entry key="S5" value="4.235309309152235" />
-      <entry key="S10" value="6.523569075546486" />
-      <entry key="S30" value="11.69757814326513" />
-      <entry key="S60" value="15.179196858146028" />
-      <entry key="M2" value="21.185560618861583" />
-      <entry key="M5" value="35.05668389359139" />
-      <entry key="M10" value="45.19260486009194" />
-      <entry key="M15" value="49.69510056570632" />
-      <entry key="M30" value="54.92284796162586" />
-      <entry key="H1" value="57.84667766308189" />
-      <entry key="H2" value="59.39350329175329" />
-      <entry key="H4" value="60.18914398345397" />
-      <entry key="D1" value="60.86378783550593" />
-      <entry key="W1" value="60.98051475805615" />
+      <entry key="MS100" value="1.3874422601911547" />
+      <entry key="MS500" value="3.292125139006755" />
+      <entry key="S2" value="4.461959216371331" />
+      <entry key="S5" value="4.773793104148" />
+      <entry key="S10" value="4.88497176398109" />
+      <entry key="S30" value="4.984725560505064" />
+      <entry key="S60" value="5.343221442301773" />
+      <entry key="M2" value="7.379823850181717" />
+      <entry key="M5" value="22.854070400970627" />
+      <entry key="M10" value="50.02517139238721" />
+      <entry key="M15" value="68.75180591800769" />
+      <entry key="M30" value="97.33693835843617" />
+      <entry key="H1" value="117.1269805132438" />
+      <entry key="H2" value="128.84487327076573" />
+      <entry key="H4" value="135.23109178171012" />
+      <entry key="D1" value="140.84421406448345" />
+      <entry key="W1" value="141.8341966767823" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="S2" value="8.563719748251675E-101" />
+      <entry key="S5" value="9.398639211982775E-41" />
+      <entry key="S10" value="9.694657916596523E-21" />
+      <entry key="S30" value="2.1322796547593118E-7" />
+      <entry key="S60" value="4.6176613721225903E-4" />
+      <entry key="M2" value="0.021488744430800493" />
+      <entry key="M5" value="0.21522088668653044" />
+      <entry key="M10" value="0.4639190518684596" />
+      <entry key="M15" value="0.5992777296753344" />
+      <entry key="M30" value="0.7741303053590751" />
+      <entry key="H1" value="0.8798467510646809" />
+      <entry key="H2" value="0.938001466451242" />
+      <entry key="H4" value="0.9685047580942703" />
+      <entry key="D1" value="0.9946805514252264" />
+      <entry key="W1" value="0.9992383406075492" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.2653060050795775" />
-      <entry key="MS500" value="1.7789570379123438" />
-      <entry key="S2" value="2.354985129093402" />
-      <entry key="S5" value="4.231474799610683" />
-      <entry key="S10" value="6.5192769527966785" />
-      <entry key="S30" value="11.69242997368824" />
-      <entry key="S60" value="15.175214623750836" />
-      <entry key="M2" value="21.182822206298606" />
-      <entry key="M5" value="35.05510002599105" />
-      <entry key="M10" value="45.191648894620336" />
-      <entry key="M15" value="49.69441546545077" />
-      <entry key="M30" value="54.92247783697717" />
-      <entry key="H1" value="57.84648491834876" />
-      <entry key="H2" value="59.39340489049896" />
-      <entry key="H4" value="60.18909426141495" />
-      <entry key="D1" value="60.86377947484506" />
-      <entry key="W1" value="60.980513561855915" />
+      <entry key="MS100" value="1.333147628234186" />
+      <entry key="MS500" value="3.2662174949402987" />
+      <entry key="S2" value="4.453046863598073" />
+      <entry key="S5" value="4.76996474307452" />
+      <entry key="S10" value="4.883010467177719" />
+      <entry key="S30" value="4.984057738506102" />
+      <entry key="S60" value="5.343314391460045" />
+      <entry key="M2" value="7.40084564938037" />
+      <entry key="M5" value="23.067960118446166" />
+      <entry key="M10" value="50.487508150221615" />
+      <entry key="M15" value="69.34964095273386" />
+      <entry key="M30" value="98.11006772228471" />
+      <entry key="H1" value="118.00623418812935" />
+      <entry key="H2" value="129.78255141013622" />
+      <entry key="H4" value="136.1994276619532" />
+      <entry key="D1" value="141.83886542045886" />
+      <entry key="W1" value="142.83343082027966" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{

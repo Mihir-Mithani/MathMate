@@ -42,4 +42,17 @@ Timestamped log of all prompt changes. Format: `prompt(<card>): <what changed> |
 
 ---
 
+## 2024-10-03 12:00 - V2 Pipeline Implementation
+
+### code(pipeline_v2): start_problem (gate -> P0 -> P1x2 consistency), get_hint (P2 -> code leak -> P3 judge -> regen 2x -> fallback), level lock helper, debug logging | why: V2 chained pipeline per spec | v2.1
+### test(pipeline_v2): mocked tests for leak-regen-pass, leak-3x-fallback, invalid-json-fallback | why: verify pipeline behavior | v2.1
+
+---
+
+## 2024-10-03 12:30 - UI Implementation
+
+### code(app): 4 tabs (Tutor, Compare, Evaluate, Prompt History) with sidebar (model selector, version, debug), level lock, working check, random problems | why: demo interface | v2.4
+
+---
+
 *Commit after every prompt-file change using: `prompt(<card>): <what changed> | why: <failure it fixes> | vX.Y`*

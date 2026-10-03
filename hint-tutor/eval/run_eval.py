@@ -7,8 +7,13 @@ import os
 import sys
 from typing import List, Dict, Any
 from datetime import datetime
+from dotenv import load_dotenv
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Load .env from the package directory
+_here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+load_dotenv(os.path.join(_here, ".env"))
+
+sys.path.insert(0, _here)
 
 from pipeline_v1 import run_pipeline_v1
 from pipeline_v2 import run_pipeline_v2

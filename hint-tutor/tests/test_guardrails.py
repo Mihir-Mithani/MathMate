@@ -2,6 +2,13 @@
 Tests for guardrails module.
 """
 import pytest
+import os
+from dotenv import load_dotenv
+
+# Load .env for any tests that might need it
+_here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+load_dotenv(os.path.join(_here, ".env"))
+
 from guardrails import (
     input_gate_code,
     leak_check_code,
