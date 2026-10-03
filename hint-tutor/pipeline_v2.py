@@ -5,6 +5,7 @@ Leak Guard (code + LLM) -> Regenerate up to 2x with feedback -> Fallback.
 """
 import time
 import json
+import os
 from typing import Optional, List, Dict, Any
 from llm import call_json, call_llm, ValidationFailure
 from guardrails import (
@@ -16,10 +17,15 @@ from guardrails import (
 )
 from schemas import Solution, Gate, Hint, LeakVerdict, WorkingAnalysis
 
+# Get the directory where this file lives
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_PROMPTS_DIR = os.path.join(_HERE, "prompts")
 
-def load_prompt(path: str) -> str:
-    """Load prompt from file."""
-    with open(path, 'r') as f:
+
+def load_prompt(relative_path: str) -> str:
+    """Load prompt from file using absolute path."""
+    full_path = os.path.join(_PROMPTS_DIR, relative_path)
+    with open(full_path, 'r') as f:
         return f.read()
 
 
