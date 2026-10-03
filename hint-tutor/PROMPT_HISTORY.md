@@ -61,4 +61,13 @@ Timestamped log of all prompt changes. Format: `prompt(<card>): <what changed> |
 
 ---
 
+## 2024-10-03 13:30 - Deploy Configuration
+
+### code(.streamlit/config.toml): Theme, server, browser settings for Streamlit Cloud | why: production deploy config | v2.5
+### code(.streamlit/secrets.toml.example): Template for Streamlit Secrets (NVIDIA_API_KEY, MODEL_MAIN, MODEL_FAST) | why: secure deploy without .env | v2.5
+### code(.gitignore): Added .streamlit/secrets.toml | why: prevent committing secrets | v2.5
+### doc(README): Deploy instructions, project structure, eval metrics | why: documentation for hackathon | v2.5
+
+---
+
 *Commit after every prompt-file change using: `prompt(<card>): <what changed> | why: <failure it fixes> | vX.Y`*
