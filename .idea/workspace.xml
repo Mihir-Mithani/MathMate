@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8dbe2977-babb-4d55-bd27-7b8fbd4d49ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/MathMate.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/PROMPT_HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/arithmetic_check.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/eval/guardrail_cases.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/eval/problems.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/eval/run_eval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/eval/wrong_working.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/guardrails.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/llm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/pipeline_v1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/pipeline_v2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v1/hint_naive.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v1/solver.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v2/p0_input_gate.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v2/p1_solver.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v2/p2_hint_generator.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v2/p3_leak_judge.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v2/p4_working_analyzer.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/prompts/v2/p5_targeted_hint.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/schemas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hint-tutor/tests/test_guardrails.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Problem13_Prompt_Playbook.docx" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="36" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Mihir-Mithani"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Mihir-Mithani/MathMate.git",
+    "accountId": "e6580030-06c1-4ac8-ba14-6724ebda7901"
+  }
+}]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.3099269249847465" />
+      <entry key="MS500" value="1.7913312460904627" />
+      <entry key="S2" value="2.3594225329209078" />
+      <entry key="S5" value="4.235309309152235" />
+      <entry key="S10" value="6.523569075546486" />
+      <entry key="S30" value="11.69757814326513" />
+      <entry key="S60" value="15.179196858146028" />
+      <entry key="M2" value="21.185560618861583" />
+      <entry key="M5" value="35.05668389359139" />
+      <entry key="M10" value="45.19260486009194" />
+      <entry key="M15" value="49.69510056570632" />
+      <entry key="M30" value="54.92284796162586" />
+      <entry key="H1" value="57.84667766308189" />
+      <entry key="H2" value="59.39350329175329" />
+      <entry key="H4" value="60.18914398345397" />
+      <entry key="D1" value="60.86378783550593" />
+      <entry key="W1" value="60.98051475805615" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.2653060050795775" />
+      <entry key="MS500" value="1.7789570379123438" />
+      <entry key="S2" value="2.354985129093402" />
+      <entry key="S5" value="4.231474799610683" />
+      <entry key="S10" value="6.5192769527966785" />
+      <entry key="S30" value="11.69242997368824" />
+      <entry key="S60" value="15.175214623750836" />
+      <entry key="M2" value="21.182822206298606" />
+      <entry key="M5" value="35.05510002599105" />
+      <entry key="M10" value="45.191648894620336" />
+      <entry key="M15" value="49.69441546545077" />
+      <entry key="M30" value="54.92247783697717" />
+      <entry key="H1" value="57.84648491834876" />
+      <entry key="H2" value="59.39340489049896" />
+      <entry key="H4" value="60.18909426141495" />
+      <entry key="D1" value="60.86377947484506" />
+      <entry key="W1" value="60.980513561855915" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3KAleTuNkdMxs8Y16YCpyGq6tGf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8dbe2977-babb-4d55-bd27-7b8fbd4d49ff" name="Changes" comment="" />
+      <created>1791008348569</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1791008348569</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

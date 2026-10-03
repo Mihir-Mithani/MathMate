@@ -1,0 +1,86 @@
+[
+  {
+    "id": "prob_001",
+    "text": "Sarah has 15 apples. She gives 4 apples to her friend and buys 7 more. How many apples does Sarah have now?",
+    "type": "arithmetic_multi_step",
+    "difficulty": "easy",
+    "expected_answer": "18"
+  },
+  {
+    "id": "prob_002",
+    "text": "A train travels at 60 miles per hour for 2.5 hours. How far does it travel?",
+    "type": "rate_distance_time",
+    "difficulty": "easy",
+    "expected_answer": "150 miles"
+  },
+  {
+    "id": "prob_003",
+    "text": "A rectangle has a length of 12 cm and a width of 8 cm. What is its area?",
+    "type": "geometry_area",
+    "difficulty": "easy",
+    "expected_answer": "96 cm²"
+  },
+  {
+    "id": "prob_004",
+    "text": "John is twice as old as Mary. In 5 years, John will be 25. How old is Mary now?",
+    "type": "algebra_age",
+    "difficulty": "medium",
+    "expected_answer": "10"
+  },
+  {
+    "id": "prob_005",
+    "text": "A store sells pencils for $0.50 each and pens for $1.20 each. If Lisa buys 8 pencils and 5 pens, how much does she spend?",
+    "type": "arithmetic_money",
+    "difficulty": "easy",
+    "expected_answer": "$10.00"
+  },
+  {
+    "id": "prob_006",
+    "text": "The sum of three consecutive integers is 72. What are the three integers?",
+    "type": "algebra_consecutive",
+    "difficulty": "medium",
+    "expected_answer": "23, 24, 25"
+  },
+  {
+    "id": "prob_007",
+    "text": "A car uses 5 gallons of gas to travel 150 miles. How many gallons are needed to travel 360 miles?",
+    "type": "proportion_rate",
+    "difficulty": "medium",
+    "expected_answer": "12 gallons"
+  },
+  {
+    "id": "prob_008",
+    "text": "A right triangle has legs of 9 cm and 12 cm. What is the length of the hypotenuse?",
+    "type": "geometry_pythagorean",
+    "difficulty": "medium",
+    "expected_answer": "15 cm"
+  },
+  {
+    "id": "prob_009",
+    "text": "A pizza is cut into 8 equal slices. If 3 people each eat 2 slices, what fraction of the pizza is left?",
+    "type": "fractions",
+    "difficulty": "easy",
+    "expected_answer": "1/4"
+  },
+  {
+    "id": "prob_010",
+    "text": "Compound interest: $1000 invested at 5% annual interest compounded yearly. How much after 3 years?",
+    "type": "compound_interest",
+    "difficulty": "hard",
+    "expected_answer": "$1157.63"
+  },
+  {
+    "id": "prob_011",
+    "text": "A farmer has chickens and cows. There are 30 heads and 86 legs total. How many chickens and how many cows?",
+    "type": "system_of_equations",
+    "difficulty": "hard",
+    "expected_answer": "17 chickens, 13 cows"
+  },
+  {
+    "id": "prob_012",
+    "text": "A pool can be filled by pipe A in 4 hours and pipe B in 6 hours. If both pipes are open, how long to fill the pool?",
+    "type": "work_rate",
+    "difficulty": "hard",
+    "expected_answer": "2.4 hours"
+  }
+]

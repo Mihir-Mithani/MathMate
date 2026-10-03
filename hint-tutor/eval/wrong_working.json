@@ -1,0 +1,104 @@
+[
+  {
+    "problem_id": "prob_001",
+    "working": "15 - 4 = 11\n11 + 7 = 18",
+    "error_type": "none",
+    "description": "Correct working"
+  },
+  {
+    "problem_id": "prob_002",
+    "working": "60 * 2.5 = 150",
+    "error_type": "none",
+    "description": "Correct working"
+  },
+  {
+    "problem_id": "prob_003",
+    "working": "12 * 8 = 96",
+    "error_type": "none",
+    "description": "Correct working"
+  },
+  {
+    "problem_id": "prob_004",
+    "working": "John = 2 * Mary\nJohn + 5 = 25\n2 * Mary + 5 = 25\n2 * Mary = 20\nMary = 10",
+    "error_type": "none",
+    "description": "Correct working"
+  },
+  {
+    "problem_id": "prob_005",
+    "working": "8 * 0.50 = 4.00\n5 * 1.20 = 6.00\n4.00 + 6.00 = 11.00",
+    "error_type": "arithmetic",
+    "description": "Added incorrectly: 4 + 6 = 10, not 11"
+  },
+  {
+    "problem_id": "prob_006",
+    "working": "x + (x+1) + (x+2) = 72\n3x + 3 = 72\n3x = 69\nx = 23",
+    "error_type": "none",
+    "description": "Correct working"
+  },
+  {
+    "problem_id": "prob_007",
+    "working": "150 miles / 5 gal = 30 mpg\n360 miles / 30 mpg = 12 gal",
+    "error_type": "none",
+    "description": "Correct working"
+  },
+  {
+    "problem_id": "prob_008",
+    "working": "9^2 + 12^2 = c^2\n81 + 144 = 225\nc = 15",
+    "error_type": "none",
+    "description": "Correct working"
+  },
+  {
+    "problem_id": "prob_009",
+    "working": "8 slices total\n3 people * 2 slices = 6 eaten\n8 - 6 = 2 left\n2/8 = 1/4",
+    "error_type": "none",
+    "description": "Correct working"
+  },
+  {
+    "problem_id": "prob_010",
+    "working": "1000 * 1.05 = 1050\n1050 * 1.05 = 1102.5\n1102.5 * 1.05 = 1157.625",
+    "error_type": "none",
+    "description": "Correct working"
+  },
+  {
+    "problem_id": "prob_011",
+    "working": "c + w = 30\n2c + 4w = 86\n2c + 2w = 60\n2w = 26\nw = 13\nc = 17",
+    "error_type": "none",
+    "description": "Correct working"
+  },
+  {
+    "problem_id": "prob_012",
+    "working": "1/4 + 1/6 = 5/12 pool per hour\n1 / (5/12) = 12/5 = 2.4 hours",
+    "error_type": "none",
+    "description": "Correct working"
+  },
+  {
+    "problem_id": "prob_001",
+    "working": "15 - 4 = 10\n10 + 7 = 17",
+    "error_type": "arithmetic",
+    "description": "15 - 4 = 11, not 10"
+  },
+  {
+    "problem_id": "prob_004",
+    "working": "John = 2 * Mary\nJohn = 25\n2 * Mary = 25\nMary = 12.5",
+    "error_type": "conceptual",
+    "description": "Forgot 'in 5 years' - John is 25 in 5 years, not now"
+  },
+  {
+    "problem_id": "prob_007",
+    "working": "150 / 5 = 30\n360 / 30 = 11",
+    "error_type": "arithmetic",
+    "description": "360 / 30 = 12, not 11"
+  },
+  {
+    "problem_id": "prob_008",
+    "working": "9 + 12 = 21\nc = 21",
+    "error_type": "conceptual",
+    "description": "Added legs instead of using Pythagorean theorem"
+  },
+  {
+    "problem_id": "prob_011",
+    "working": "c + w = 30\nc + w = 86",
+    "error_type": "setup",
+    "description": "Second equation wrong: legs should be 2c + 4w = 86"
+  }
+]

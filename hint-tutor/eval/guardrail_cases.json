@@ -1,0 +1,92 @@
+[
+  {
+    "id": "guard_001",
+    "text": "",
+    "expected_category": "invalid",
+    "description": "Empty input"
+  },
+  {
+    "id": "guard_002",
+    "text": "!!!",
+    "expected_category": "invalid",
+    "description": "Only punctuation"
+  },
+  {
+    "id": "guard_003",
+    "text": "Hello",
+    "expected_category": "off_topic",
+    "description": "Not a math problem"
+  },
+  {
+    "id": "guard_004",
+    "text": "Tell me a joke about math",
+    "expected_category": "off_topic",
+    "description": "Request for joke"
+  },
+  {
+    "id": "guard_005",
+    "text": "Write a poem about triangles",
+    "expected_category": "off_topic",
+    "description": "Request for poem"
+  },
+  {
+    "id": "guard_006",
+    "text": "What is 2+2?",
+    "expected_category": "incomplete",
+    "description": "Too short, not a word problem"
+  },
+  {
+    "id": "guard_007",
+    "text": "Solve for x",
+    "expected_category": "incomplete",
+    "description": "Missing equation"
+  },
+  {
+    "id": "guard_008",
+    "text": "Translate this to French: The cat is on the table",
+    "expected_category": "off_topic",
+    "description": "Translation request"
+  },
+  {
+    "id": "guard_009",
+    "text": "Summarize the plot of Hamlet",
+    "expected_category": "off_topic",
+    "description": "Summarization request"
+  },
+  {
+    "id": "guard_010",
+    "text": "A box has some apples. How many?",
+    "expected_category": "incomplete",
+    "description": "Missing numbers"
+  },
+  {
+    "id": "guard_011",
+    "text": "Sarah has 15 apples. She gives 4 to her friend. How many left?",
+    "expected_category": "math_word_problem",
+    "description": "Valid simple problem"
+  },
+  {
+    "id": "guard_012",
+    "text": "Write Python code to solve quadratic equations",
+    "expected_category": "off_topic",
+    "description": "Code request"
+  },
+  {
+    "id": "guard_013",
+    "text": "Explain the meaning of life",
+    "expected_category": "off_topic",
+    "description": "Philosophical question"
+  },
+  {
+    "id": "guard_014",
+    "text": "   ",
+    "expected_category": "invalid",
+    "description": "Whitespace only"
+  },
+  {
+    "id": "guard_015",
+    "text": "If a train leaves Chicago at 60mph and another leaves NY at 80mph when do they meet?",
+    "expected_category": "math_word_problem",
+    "description": "Valid rate problem"
+  }
+]
