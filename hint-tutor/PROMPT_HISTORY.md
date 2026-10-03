@@ -49,9 +49,15 @@ Timestamped log of all prompt changes. Format: `prompt(<card>): <what changed> |
 
 ---
 
-## 2024-10-03 12:30 - UI Implementation
+## 2024-10-03 12:30 - UI Implementation (4 tabs)
 
 ### code(app): 4 tabs (Tutor, Compare, Evaluate, Prompt History) with sidebar (model selector, version, debug), level lock, working check, random problems | why: demo interface | v2.4
+
+---
+
+## 2024-10-03 13:00 - UI Simplification (Single Tutor Tab)
+
+### code(app): Removed Compare, Evaluate, Prompt History tabs; removed V1/V2 selector; single Tutor tab with V2 pipeline only | why: align with Problem 13 spec (single production pipeline) | v2.5
 
 ---
 

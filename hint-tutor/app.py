@@ -1,15 +1,14 @@
 """
-Streamlit app for Hint-Based Math Tutor.
-Single Tutor tab with progressive hints.
+Streamlit app for Hint-Based Math Tutor (Problem 13).
+Single Tutor tab with V2 chained pipeline + history sidebar.
 """
 import streamlit as st
 import json
 import os
 import sys
-import time
 import random
+from typing import Optional
 from datetime import datetime
-from typing import Optional, Dict, Any, List
 from dotenv import load_dotenv
 
 # Load .env from the package directory BEFORE importing modules that need it
@@ -18,7 +17,6 @@ load_dotenv(os.path.join(_here, ".env"))
 
 sys.path.insert(0, _here)
 
-from pipeline_v1 import get_hint_v1
 from pipeline_v2 import (
     start_problem,
     get_hint,
@@ -27,35 +25,10 @@ from pipeline_v2 import (
     generate_targeted_hint,
     get_debug_log,
 )
-from guardrails import input_gate_code
+from guardrails import input_gate_code, normalise_numeric_equal
 
 
 st.set_page_config(page_title="Hint-Based Math Tutor", page_icon="🧮", layout="wide")
-
-
-# --- Sidebar ---
-with st.sidebar:
-    st.header("⚙️ Settings")
-
-    # Model selector
-    model_option = st.selectbox(
-        "Model",
-        ["MODEL_MAIN (nemotron-3-super)", "MODEL_FAST (nemotron-3-super)"],
-        index=0,
-        help="MODEL_MAIN and MODEL_FAST both use nemotron-3-super-120b-a12b via NVIDIA NIM"
-    )
-    model_key = "MODEL_MAIN" if "MAIN" in model_option else "MODEL_FAST"
-    model_name = os.getenv(model_key, "nvidia/nemotron-3-super-120b-a12b")
-
-    # Prompt version
-    prompt_version = st.radio("Pipeline Version", ["V2 (Chained)", "V1 (Naive)"], horizontal=True)
-    version_key = "V2" if "V2" in prompt_version else "V1"
-
-    # Debug toggle
-    show_debug = st.checkbox("Show Debug Info", value=False)
-
-    st.divider()
-    st.caption("Hint-Based Math Tutor v2.4")
 
 
 # --- Session State ---
@@ -70,8 +43,10 @@ if "tutor_state" not in st.session_state:
         "working_analysis": None,
         "targeted_hint": None,
         "final_answer": "",
-        "debug_log": [],
     }
+
+if "history" not in st.session_state:
+    st.session_state.history = []  # list of completed problem sessions
 
 
 # Bank of 6 extra problems (NOT in eval)
@@ -129,13 +104,25 @@ def format_hint_card(level: int, hint_text: str, follow_up: Optional[str], guard
         st.markdown(hint_text)
         if follow_up:
             st.info(f"💡 {follow_up}")
-        if show_debug:
-            with st.expander("Debug"):
-                st.json({"attempts": attempts, "guard_status": guard_status})
 
 
 def reset_tutor():
-    """Reset tutor state."""
+    """Reset tutor state for a new problem, saving current to history."""
+    state = st.session_state.tutor_state
+    if state["problem"] and (state["hints_shown"] or state["working_analysis"] or state["final_answer"]):
+        # Save to history
+        history_entry = {
+            "timestamp": datetime.now().strftime("%H:%M:%S"),
+            "problem": state["problem"],
+            "hints": state["hints_shown"].copy(),
+            "working_analysis": state["working_analysis"],
+            "targeted_hint": state["targeted_hint"],
+            "final_answer": state["final_answer"],
+            "solution_answer": state["solution"].final_answer if state["solution"] else None,
+        }
+        st.session_state.history.insert(0, history_entry)  # newest first
+
+    # Reset tutor state
     st.session_state.tutor_state = {
         "problem": "",
         "solution": None,
@@ -146,8 +133,96 @@ def reset_tutor():
         "working_analysis": None,
         "targeted_hint": None,
         "final_answer": "",
-        "debug_log": [],
     }
+
+
+def clear_history():
+    """Clear the history sidebar."""
+    st.session_state.history = []
+
+
+def load_history_problem(index: int):
+    """Load a problem from history back into the tutor."""
+    if 0 <= index < len(st.session_state.history):
+        entry = st.session_state.history[index]
+        state = st.session_state.tutor_state
+        state["problem"] = entry["problem"]
+        state["hints_shown"] = entry["hints"].copy()
+        state["shown_levels"] = set(h["level"] for h in entry["hints"])
+        state["working_analysis"] = entry["working_analysis"]
+        state["targeted_hint"] = entry["targeted_hint"]
+        state["final_answer"] = entry["final_answer"]
+        state["attempts_made"] = len([h for h in entry["hints"] if h["level"] == 3]) + (1 if entry["working_analysis"] else 0)
+        # Note: solution is not restored (hidden), user would need to click Start Problem again
+
+
+# --- Sidebar ---
+with st.sidebar:
+    st.header("⚙️ Settings")
+
+    # Model selector
+    model_option = st.selectbox(
+        "Model",
+        ["MODEL_MAIN (nemotron-3-super)", "MODEL_FAST (nemotron-3-super)"],
+        index=0,
+        help="MODEL_MAIN and MODEL_FAST both use nemotron-3-super-120b-a12b via NVIDIA NIM"
+    )
+    model_key = "MODEL_MAIN" if "MAIN" in model_option else "MODEL_FAST"
+    model_name = os.getenv(model_key, "nvidia/nemotron-3-super-120b-a12b")
+
+    # Debug toggle
+    show_debug = st.checkbox("Show Debug Info", value=False)
+
+    st.divider()
+
+    # --- HISTORY PANEL ---
+    st.header("📜 Session History")
+    if st.button("Clear History", use_container_width=True):
+        clear_history()
+        st.rerun()
+
+    if st.session_state.history:
+        for idx, entry in enumerate(st.session_state.history):
+            with st.expander(f"{entry['timestamp']} — {entry['problem'][:50]}{'...' if len(entry['problem']) > 50 else ''}", expanded=False):
+                st.caption(f"Problem: {entry['problem']}")
+                if entry["solution_answer"]:
+                    st.caption(f"Answer: {entry['solution_answer']}")
+
+                # Show hints given
+                for h in entry["hints"]:
+                    level_names = {1: "L1 Orient", 2: "L2 Strategy", 3: "L3 Walkthrough"}
+                    guard_short = h["guard_status"]
+                    if guard_short.startswith("regenerated"):
+                        guard_short = f"regen {guard_short.split('_')[1]}×"
+                    st.markdown(f"**{level_names.get(h['level'], f'L{h['level']}')}** ({guard_short})")
+                    st.caption(h["hint"][:120] + ("..." if len(h["hint"]) > 120 else ""))
+
+                # Show working analysis
+                if entry["working_analysis"]:
+                    wa = entry["working_analysis"]
+                    if wa.has_error:
+                        st.warning(f"⚠️ Step {wa.first_wrong_step_index + 1} flagged: {wa.error_type}")
+                    else:
+                        st.success("✅ No errors")
+
+                # Show targeted hint
+                if entry["targeted_hint"]:
+                    th = entry["targeted_hint"]
+                    st.info(f"Targeted hint: {th['hint'][:100]}...")
+
+                # Show final answer
+                if entry["final_answer"]:
+                    correct = "✅" if entry["solution_answer"] and normalise_numeric_equal(entry["final_answer"], entry["solution_answer"]) else "❌"
+                    st.markdown(f"**Your answer:** {entry['final_answer']} {correct}")
+
+                if st.button("Load This Problem", key=f"load_{idx}", use_container_width=True):
+                    load_history_problem(idx)
+                    st.rerun()
+    else:
+        st.caption("No problems solved yet. Start a new problem!")
+
+    st.divider()
+    st.caption("Hint-Based Math Tutor — Problem 13")
 
 
 # --- MAIN TUTOR TAB ---
@@ -170,15 +245,7 @@ def main():
         if st.button("Start Problem", type="primary", use_container_width=True):
             if problem_text.strip():
                 with st.spinner("Starting problem..."):
-                    if version_key == "V2":
-                        result = start_problem(problem_text, model=model_name)
-                    else:
-                        # V1 doesn't have start_problem, just validate
-                        gate = input_gate_code(problem_text)
-                        if gate:
-                            result = {"status": "refused", "refusal_message": f"Input rejected: {gate}"}
-                        else:
-                            result = {"status": "ok", "solution": None}
+                    result = start_problem(problem_text, model=model_name)
 
                     state["problem"] = problem_text
                     state["refusal"] = None
@@ -206,7 +273,7 @@ def main():
             st.rerun()
 
     with col3:
-        if st.button("Clear", use_container_width=True):
+        if st.button("New Problem", use_container_width=True):
             reset_tutor()
             st.rerun()
 
@@ -223,8 +290,8 @@ def main():
                 st.write(f"- {step.description}: {step.expression} = {step.result}")
             st.write(f"**Final Answer:** {sol.final_answer}")
 
-    # Hint buttons (only for V2)
-    if state["solution"] and version_key == "V2":
+    # Hint buttons
+    if state["solution"]:
         st.divider()
         st.subheader("Get Hints")
 
@@ -276,41 +343,8 @@ def main():
             for h in state["hints_shown"]:
                 format_hint_card(h["level"], h["hint"], h.get("follow_up"), h["guard_status"], h["attempts"])
 
-    # V1: simple hint buttons
-    elif state.get("problem") and version_key == "V1":
-        st.divider()
-        st.subheader("Get Hints (V1 Naive)")
-
-        hcols = st.columns(3)
-        with hcols[0]:
-            if st.button("Hint 1", use_container_width=True):
-                with st.spinner("Generating..."):
-                    hint = get_hint_v1(state["problem"], 1)
-                    st.session_state.tutor_state["hints_shown"].append({"level": 1, "hint": hint, "guard_status": "v1", "attempts": 1})
-                    st.rerun()
-        with hcols[1]:
-            if st.button("Hint 2", use_container_width=True):
-                with st.spinner("Generating..."):
-                    hint = get_hint_v1(state["problem"], 2)
-                    st.session_state.tutor_state["hints_shown"].append({"level": 2, "hint": hint, "guard_status": "v1", "attempts": 1})
-                    st.rerun()
-        with hcols[2]:
-            if st.button("Hint 3", use_container_width=True):
-                with st.spinner("Generating..."):
-                    hint = get_hint_v1(state["problem"], 3)
-                    st.session_state.tutor_state["hints_shown"].append({"level": 3, "hint": hint, "guard_status": "v1", "attempts": 1})
-                    st.rerun()
-
-        if state["hints_shown"]:
-            st.divider()
-            st.subheader("Hints Given")
-            for h in state["hints_shown"]:
-                with st.container(border=True):
-                    st.markdown(f"### Level {h['level']}")
-                    st.markdown(h["hint"])
-
-    # Working check (V2 only)
-    if state["solution"] and version_key == "V2":
+    # Working check
+    if state["solution"]:
         st.divider()
         st.subheader("📝 Check Your Working")
 
@@ -370,7 +404,6 @@ def main():
 
         if st.button("Check Answer", use_container_width=True):
             if final_answer.strip():
-                from guardrails import normalise_numeric_equal
                 correct = normalise_numeric_equal(final_answer, state["solution"].final_answer)
                 if correct:
                     st.success("✅ Correct!")
